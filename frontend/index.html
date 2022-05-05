@@ -1,22 +1,64 @@
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="description" content="JustStreamIt est un site de classement des meilleurs films" />
+        <meta name="description" content="JustStreamIt est une application web permettant
+        de visualiser en temps réel un classement de films intéressants." />
+
         <!-- Twitter Card data -->
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="JustStreamIt est une application web permettant
+        de visualiser en temps réel un classement de films intéressants." />
+
         <!-- Open Graph data -->
         <meta property="og:title" content="JustStreamIt" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://rossignol-h.github.io/" />
-        <meta property="og:image" content="" />
-        <meta property="og:description" content="" />
+        <meta property="og:image" content="http://example.com/image.jpg" />
+        <meta property="og:description" content="application web permettant 
+        de visualiser en temps réel un classement de films intéressants." />
 
+        <!-- Customize css -->
+        <link rel="stylesheet" href="./public/main.css" />
+
+        <!-- Google font Arimo-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Arimo:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+        <!-- favicon 
+        <link
+        rel="shortcut icon"
+        type="image/svg"
+        href="./public/images/logo/favicon.svg"
+        />-->
+        <title>JustStreamIt</title>
+    </head>
     </head>
 
     <body>
+        <nav>
+            <div class="nav-container">
+                <img class="logo"
+                    src="./public/images/logo/justStreamIt_logo.svg"
+                    alt="logo JustStreamIt"
+                />
+                <!--Navigation list-->
+                <ul class="nav-item">
+                    <li><a href="#">Accueil</a></li>
+                    <li><a href="#animation">Animation</a></li>
+                    <li><a href="#Science-fiction">Science-fiction</a></li>
+                    <li><a href="#Sport">Fantastique</a></li>
+                    <li><a href="">Catégories</a></li> 
+                </ul> 
+                <div class="nav-right">
+                    <img class="cloche" src="./public/images/icons/bell.svg" alt="cloche de notification" 
+                        width=25 height=25>
+                    <img class="profil" src="./public/images/icons/profil.png" alt="photo de profil">
+                </div>
+            </div>
+        </nav>
+
     </body>
 </html>
