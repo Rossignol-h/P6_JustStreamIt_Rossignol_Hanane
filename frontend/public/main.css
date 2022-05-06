@@ -84,21 +84,12 @@ nav {
 .nav-item {
     grid-column: 2/3;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
 }
 
 .nav-item a {
-    text-align: center;
     font-size: 14px;
-    padding-top: 50px;
     color: #e5e5e5;
-}
-
-.nav-item {
-    grid-column: 2/3;
-    display: flex;
-    justify-content: space-between;
-
 }
 
 .nav-right {
@@ -111,4 +102,111 @@ nav {
 .profil {
     border-radius: 0.3rem;
     width: 3rem;
+}
+
+/*******************header grid************************/
+header {
+    grid-area: h;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 0 auto;
+}
+
+#hero-container {
+    display: grid;
+    grid-template-columns: 0.3fr 350px 2fr;
+    grid-template-rows: 160px 50px 80px;
+    align-items: flex-end;
+}
+
+#hero-container picture {
+    grid-column: 1/4;
+    grid-row: 1/4;
+    z-index: -1;
+    display: block;
+    position: relative;
+    padding-top: 56.25%;
+}
+
+#hero-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: top right;
+    opacity: 0.5;
+}
+
+#hero-container h1 {
+    grid-column: 2/4;
+    grid-row: 1/2;
+    align-self: end;
+}
+
+#hero-container .btn_container {
+    display: flex;
+    grid-column: 2/4;
+    grid-row: 2/3;
+}
+
+#hero-container button {
+    align-self: center;
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(255, 255, 255);
+    width: 9rem;
+    height: 2.5rem;
+    padding: 0.8rem;
+    margin-right: 1rem;
+    cursor: pointer;
+    border: 0;
+    border-radius: 0.25rem;
+}
+
+#hero-container button:nth-of-type(2) {
+    background-color: rgba(109, 109, 110, 0.7);
+    width: 11rem;
+}
+
+#hero-container button:nth-of-type(2):hover {
+    background-color: rgba(109, 109, 110, 0.4);
+}
+
+#hero-container button:hover {
+    background-color: rgba(255, 255, 255, 0.75);
+}
+
+#hero-container button div {
+    align-self: center;
+}
+
+#hero-container button span {
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.play {
+    color: #000000;
+
+}
+
+.more_info {
+    color: #ffffff;
+}
+
+#hero-container p {
+    grid-column: 2/4;
+    grid-row: 3/-1;
+    margin-bottom: 1rem;
+}
+
+.catch-error {
+    grid-column: 2/4;
+    grid-row: 2/3;
+    align-self: center;
+    font-size: 1rem;
+    color: red;
 }
