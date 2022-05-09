@@ -1,0 +1,65 @@
+const heroContainer = document.querySelector("#hero-container")
+const heroError = document.querySelector(".catch-error")
+const score_min = 9.5
+//-------------------------------------------------  connect to API and get response in JSON 
+async function getBestMovie() {
+  try {
+    const response = await fetch(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&imdb_score_min=${score_min}`)
+    const data = await response.json()
+    const movieUrl = data.results[0].url
+    const response2 = await fetch(movieUrl)
+    const movie = await response2.json()
+    return movie
+
+  } catch (error) {
+    console.error(error)
+    heroError.innerHTML += `Nous sommes désolés une erreur s'est produite, veuillez rafraichir la page`
+  }
+}
+
+//-------------------------------------------------- Display info in hero section
+
+getBestMovie().then((movie) => {
+
+  heroContainer.innerHTML += `
+    <picture>
+      <img 
+        alt="affiche de film" 
+        src="${movie.image_url}"
+        id=${movie.id}
+        aria-hidden="true"
+        height="268"
+        width="182"/>
+    </picture>
+    <h1>${movie.title}</h1>
+    <div class="btn_container">
+      <button type="button">
+        <div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M 4 2.69127 C 4 1.93067 4.81547 1.44851 5.48192 1.81506 
+          L 22.4069 11.1238 C 23.0977 11.5037 23.0977 12.4963 22.4069 12.8762 
+          L 5.48192 22.1849 C 4.81546 22.5515 4 22.0693 4 21.3087 V 2.69127 Z");
+          fill="#000">
+          </path>
+          </svg>
+        </div>
+        <span class="play">Lecture</span>
+      </button>
+      <button type="button">
+        <div>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd" 
+            d="M12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 
+            21 12C21 7.02944 16.9706 3 12 3ZM1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 
+            5.92487 23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12ZM13 10V18H11V10H13ZM12 
+            8.5C12.8284 8.5 13.5 7.82843 13.5 7C13.5 6.17157 12.8284 5.5 12 5.5C11.1716 5.5 10.5 6.17157 
+            10.5 7C10.5 7.82843 11.1716 8.5 12 8.5Z" fill="#fff">
+            </path>
+          </svg>
+        </div>
+        <span class="more_info">Plus d'infos</span>
+      </button>
+    </div>
+    <p>${movie.description}</p>`
+})
