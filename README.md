@@ -32,7 +32,7 @@ python manage.py runserver
 
 open the file index.html 
  
-### *Note: This website is optimized for Edge, Mozilla Firefox and Chrome*
+#### *Note: This website is optimized for Edge, Mozilla Firefox and Chrome*
 
 ## Author
 
