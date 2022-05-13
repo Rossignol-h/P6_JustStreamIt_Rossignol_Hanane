@@ -1,10 +1,11 @@
 const heroContainer = document.querySelector("#hero-container")
 const heroError = document.querySelector(".catch-error")
-const score_min = 9.5
-//-------------------------------------------------  connect to API and get response in JSON 
+let min_score = 9.5 // gives 4 results instead of 85851
+
+//----------------------------------------------------------  connect to API and get response in JSON 
 async function getBestMovie() {
   try {
-    const response = await fetch(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&imdb_score_min=${score_min}`)
+    const response = await fetch(`http://localhost:8000/api/v1/titles/?sort_by=-imdb_score&imdb_score_min=${min_score}`)
     const data = await response.json()
     const movieUrl = data.results[0].url
     const response2 = await fetch(movieUrl)
@@ -46,7 +47,8 @@ getBestMovie().then((movie) => {
         </div>
         <span class="play">Lecture</span>
       </button>
-      <button type="button">
+      <a href=#${movie.id}>
+      <button type="button" class="open">
         <div>
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path fill-rule="evenodd" clip-rule="evenodd" 
@@ -59,7 +61,8 @@ getBestMovie().then((movie) => {
           </svg>
         </div>
         <span class="more_info">Plus d'infos</span>
-      </button>
+        </button>
+        </a>
     </div>
     <p>${movie.description}</p>`
 })

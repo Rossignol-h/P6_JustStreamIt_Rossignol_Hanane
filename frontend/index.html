@@ -23,6 +23,7 @@
         <!-- Customize css -->
         <link rel="stylesheet" href="./public/main.css" />
         <link rel="stylesheet" href="./public/carousel.css" />
+        <link rel="stylesheet" href="./public/modal.css" />
 
         <!-- Google font Arimo-->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,7 +36,6 @@
     </head>
 
     <body>
-        <!-- loading spinner  -->
         <div class="loading__screen">
             <div id="loading__logo">
                 <img id="eye" src="./public/images/logo/eye.svg" alt="justStreamIt logo" />
@@ -43,28 +43,39 @@
                 <img id="outer_circle" src="./public/images/logo/outer_circle.svg" alt="justStreamIt logo" />
             </div>
         </div>
-        <!--Navigation list-->
         <nav>
             <div class="nav-container">
                 <img class="logo" src="./public/images/logo/justStreamIt_full_logo.svg" alt="logo JustStreamIt" />
-                <ul class="nav-item">
+                <!--Navigation list-->
+                <ul class="nav-item" id="nav-item">
                     <li><a href="#">Accueil</a></li>
                     <li><a href="#animation">Animation</a></li>
                     <li><a href="#Science-fiction">Science-fiction</a></li>
                     <li><a href="#Sport">Sport</a></li>
-                    <li><a href="">Catégories</a></li>
                 </ul>
+                <!-- Responsive Navigation -->
+                <div class="dropdown">
+                    <button type="button">
+                        <span class="play">Catégories</span>
+                        <img src="./public/images/icon/dropdown.png" alt="icone de position" 
+                            aria-hidden="true" aria-label="ouvrir le menu déroulant" height="30" width="30" />
+                    </button>
+                    <ol class="dropdown-content">
+                        <li><a href="#animation">Animation</a></li>
+                        <li><a href="#Science-fiction">Science-fiction</a></li>
+                        <li><a href="#Sport">Sport</a></li>
+                    </ol>
+                </div>
                 <div class="nav-right">
-                    <img class="cloche" src="./public/images/icons/bell.svg" alt="cloche de notification" width=25
-                        height=25>
-                    <img class="profil" src="./public/images/icons/profil.png" alt="photo de profil">
+                    <img class="bell" src="./public/images/icons/bell.svg" alt="icone notification" width=25 height=25>
+                    <img class="profil" src="./public/images/images/profil.png" alt="photo de profil">
                 </div>
             </div>
         </nav>
         <!--Header hero -->
         <header>
             <div id="hero-container">
-                <h2 class="catch-error"></h2>
+                <h2 class="catch-error">Sorry :</h2>
                 <!--index.js -->
             </div>
         </header>
@@ -74,27 +85,27 @@
                 <h2>Films les mieux notés</h2>
                 <div class="carousel__container" id="carousel_container1">
                     <button type="button" class="btn arrow-left">
-                        <img src="./public/images/icon/left.svg" alt="icone de position" 
+                        <img src="./public/images/icons/left.svg" alt="icone de position" 
                             aria-hidden="true" height="30" width="30" />
                     </button>
                     <ol class="carousel__ol" id="carousel__ol-1"><!--fetch_carousel.js--></ol>
                     <button type="button" class="btn arrow-right">
-                        <img src="./public/images/icon/right.svg" alt="icone de position" 
+                        <img src="./public/images/icons/right.svg" alt="icone de position" 
                             aria-hidden="true" aria-label="Voir plus de titres" height="30" width="30" />
                     </button>
                 </div>
             </article>
             <!-- Carousel section 2 -->
             <article class="carousel" id="animation">
-                <h2>Films d'animations les mieux notés</h2>
+                <h2>Films d'animation les mieux notés</h2>
                 <div class="carousel__container">
                     <button type="button" class="btn arrow-left">
-                        <img src="./public/images/icon/left.svg" alt="icone de position" 
+                        <img src="./public/images/icons/left.svg" alt="icone de position" 
                             aria-hidden="true" height="30" width="30" />
                     </button>
                     <ol class="carousel__ol" id="carousel__ol-2"><!-- fetch_carousel.js --></ol>
                     <button type="button" class="btn arrow-right">
-                        <img src="./public/images/icon/right.svg" alt="icone de position"
+                        <img src="./public/images/icons/right.svg" alt="icone de position"
                             aria-hidden="true" aria-label="Voir plus de titres" height="30" width="30" />
                     </button>
                 </div>
@@ -104,12 +115,12 @@
                 <h2>Films de science-fiction les mieux notés</h2>
                 <div class="carousel__container">
                     <button type="button" class="btn arrow-left">
-                        <img src="./public/images/icon/left.svg" alt="icone de position" 
+                        <img src="./public/images/icons/left.svg" alt="icone de position" 
                             aria-hidden="true" height="30" width="30" />
                     </button>
                     <ol class="carousel__ol" id="carousel__ol-3"><!-- fetch_carousel.js --></ol>
                     <button type="button" class="btn arrow-right">
-                        <img src="./public/images/icon/right.svg" alt="icone de position" 
+                        <img src="./public/images/icons/right.svg" alt="icone de position" 
                             aria-hidden="true" aria-label="Voir plus de titres" height="30" width="30" />
                     </button>
                 </div>
@@ -129,9 +140,29 @@
                     </button>
                 </div>
             </article>
+
+            <!--Start Modal -->
+            <section>
+                <div class="overlay"></div>
+                <div class="modal">
+                    <div class="modal_container">
+                        <button type="button" id="close_modal">
+                            <img src="./public/images/icons/close_modal.svg" class="close_modal"
+                                alt="icone de fermeture de la fenetre">
+                        </button>
+                        <div class="modal_header"></div>
+                        <div class="modal_details"></div>
+                        <div class="modal_footer">
+                            <ul></ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- End Modal -->
+        </main>
         <script src="./index.js"></script>
         <script src="./fetch_carousel.js"></script>
         <script src="./carousel.js"></script>
+        <script src="./modal.js"></script>
     </body>
-
 </html>
