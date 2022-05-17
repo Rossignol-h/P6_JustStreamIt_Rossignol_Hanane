@@ -17,13 +17,18 @@ open your terminal at the root of backend folder
 ```bash
 project-Folder\backend>
 ```
-Activate the virtual environment
+Create a virtual environment
+
 ```bash
-.\env\Scripts\activate
+python -m venv env
 ```
-Run the server
+Activate virtual environment
 ```bash
-python manage.py runserver
+env/Script/activate
+```
+Install dependencies
+```bash
+pip install -r requirements.txt
 ```
 
 ## Usage 
@@ -32,7 +37,7 @@ python manage.py runserver
 
 open the file index.html 
  
-#### *Note: This website is optimized for Edge, Mozilla Firefox and Chrome*
+### *Note: This website is optimized for Edge, Mozilla Firefox and Chrome*
 
 ## Author
 
