@@ -27,10 +27,10 @@
     left: 50%;
     overflow: hidden;
     transition: all 0.4s;
-    box-shadow: rgba(88, 88, 88, 0.75) 0px 3px 10px;
+    box-shadow: rgb(0 0 0 / 75%) 0px 3px 10px;
     border-radius: 10px;
     background: linear-gradient(to left, #860707 50%, transparent 100%);
-    background-image: url("images/images/modal_bg.jpg");
+    background-image: url("images/modal_bg.jpg");
     background-size: cover;
     background-position: 100% 60%;
 }
@@ -153,7 +153,7 @@
     background-image: url("images/modal_bg.jpg");
 }
 
-/****************************************** responsive styles ********************************/
+/*---------------------------------------------------------------------------- responsive styles */
 @media only screen and (min-width : 768px) and (max-width : 1024px) {
 
     .modal {
@@ -165,15 +165,35 @@
     }
 }
 
-
-
 @media only screen and (min-width : 320px) and (max-width : 768px) {
-    .movie_img {
-        width: 60%;
+    .modal {
+        width: 100%;
+        height: auto;
+        border-radius: 0;
     }
 
-    .modal {
-        width: 95%;
+    .overlay {
+        background-color: rgba(0, 0, 0, 0.952);
+    }
+    .modal_header {
+        margin-top: 1.6rem;
+    }
+    .modal_header img {
+        height: 200px;
+    }
+
+    .modal_container {
+        background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
+        display: inline-grid;
+        border-radius: 0;
+    }
+
+    .modal_header {
+        width: 100%;
+    }
+
+    .modal_header h1 {
+        font-size: 1rem;
     }
 
     .modal_details {
@@ -184,23 +204,9 @@
         width: 100%;
         background-position: 50% 50% !important;
     }
-
-    .modal_header {
-        width: 100%;
-        margin-top: 85px;
-    }
-
-    .movie_desc {
-        width: 100%;
-    }
-
-    .modal_container {
-        background: linear-gradient(to top, rgb(20, 20, 19) 50%, transparent 100%);
-        display: inline-grid;
-    }
 }
 
-/*********************************************Animations****************/
+/*---------------------------------------------Animations*/
 @keyframes fadeIn {
     30% {
         opacity: 0;

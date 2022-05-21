@@ -1,6 +1,7 @@
 :root {
     --img-radius: 0.4vw;
     --left-padding: 3.4rem;
+    --margin-mobile: 1.7rem;
 }
 
 body {
@@ -11,13 +12,14 @@ body {
     width: 100%;
     margin: 4vw 0;
     z-index: 1;
+    scroll-margin: 80px;
 }
 
 .carousel h2 {
     margin-left: var(--left-padding);
     margin-bottom: 1vw;
     color: #e5e5e5;
-    font-size: 1.4vw;
+    font-size: 1.2rem;
 }
 
 .carousel__container {
@@ -82,7 +84,7 @@ body {
 }
 
 .carousel__ol li {
-    max-width: calc(100% / var(--items-per-screen));
+    display: flex;
 }
 
 .carousel__ol li img {
@@ -101,7 +103,26 @@ body {
 }
 
 @media (max-width: 500px) {
-    .slider {
-        --items-per-screen: 2;
+    .carousel h2 {
+        margin-left: calc(var(--margin-mobile) + .4rem);
+        margin-top: calc(var(--margin-mobile) * 2);
+        font-size: 1rem;
     }
+    
+    .carousel__ol {
+        transform: translateX(calc(var(--carousel-index) * -78vw )); /*244PX*/
+    }
+
+    .carousel__ol li img {
+        width: 10rem;
+    }
+
+    .carousel__container button {
+       width:calc(var(--margin-mobile))
+        
+    }
+    .carousel__container>button:hover {
+        background-color: transparent;
+    }
+
 }
