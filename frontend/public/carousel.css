@@ -4,10 +4,6 @@
     --margin-mobile: 1.7rem;
 }
 
-body {
-    margin: 0;
-}
-
 .carousel {
     width: 100%;
     margin: 4vw 0;
@@ -96,6 +92,7 @@ body {
     border-radius: var(--img-radius);
 }
 
+/* --------------------------------------------------- responsive */
 @media (max-width: 1000px) {
     .slider {
         --items-per-screen: 3;
@@ -108,9 +105,9 @@ body {
         margin-top: calc(var(--margin-mobile) * 2);
         font-size: 1rem;
     }
-    
+
     .carousel__ol {
-        transform: translateX(calc(var(--carousel-index) * -78vw )); /*244PX*/
+        transform: translateX(calc(var(--carousel-index) * -78vw));
     }
 
     .carousel__ol li img {
@@ -118,11 +115,10 @@ body {
     }
 
     .carousel__container button {
-       width:calc(var(--margin-mobile))
-        
+        width: calc(var(--margin-mobile))
     }
+
     .carousel__container>button:hover {
         background-color: transparent;
     }
-
 }

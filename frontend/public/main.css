@@ -57,7 +57,7 @@ body {
   background-color: #141414;
 }
 
-/************************spinner****************/
+/* ---------------------------------------- Loading animation */
 .loading__screen {
   display: flex;
   flex-direction: column;
@@ -98,7 +98,7 @@ body {
   animation: rotate_loader2 3s linear forwards;
 }
 
-/*******************nav grid************************/
+/* ---------------------------------------- Navbar */
 nav {
   width: 100%;
   margin: 0 auto 0 auto;
@@ -152,11 +152,11 @@ nav {
   width: 3rem;
 }
 
-/*******************header grid************************/
+/* ---------------------------------------- Header */
 header {
   width: 100%;
   height: auto;
-  top : 70px;
+  top: 70px;
   margin: 0 auto 0 auto;
 }
 
@@ -174,7 +174,8 @@ header {
   display: block;
   position: relative;
   padding-top: 56.25%;
-  background-image: linear-gradient(to bottom,rgba(7, 7, 7, 0.7) 10%,rgba(0,0,0,0));/*netflix gradiant*/
+  background-image: linear-gradient(to bottom, rgba(7, 7, 7, 0.7) 10%, rgba(0, 0, 0, 0));
+  /*netflix gradiant*/
 }
 
 #hero-container img {
@@ -213,12 +214,12 @@ header {
   border-radius: 0.25rem;
 }
 
-#hero-container > div > a > button {
+#hero-container>div>a>button {
   background-color: rgba(109, 109, 110, 0.7);
   width: 11rem;
 }
 
-#hero-container > div > a > button:hover {
+#hero-container>div>a>button:hover {
   background-color: rgba(109, 109, 110, 0.4);
   color: #ffffff;
 }
@@ -234,7 +235,7 @@ header {
   padding-left: .5rem;
 }
 
-#hero-container > div > button > span {
+#hero-container>div>button>span {
   color: #000000;
 }
 
@@ -253,11 +254,12 @@ header {
   color: red;
 }
 
-/* =================================================================responsive*/
-@media screen and (max-width: 700px) {
+/* ---------------------------------------- responsive */
+@media screen and (max-width: 600px) {
   .nav-item a {
     display: none;
   }
+
   .nav-container {
     padding: 0;
     display: flex;
@@ -281,11 +283,13 @@ header {
   .dropdown button span {
     color: #e5e5e5;
   }
+
   .dropdown img {
     align-self: flex-end;
     width: 1.5rem;
-    padding-left:.5rem
+    padding-left: .5rem
   }
+
   .dropdown-content {
     display: none;
     position: absolute;
@@ -294,7 +298,7 @@ header {
     background-color: rgba(0, 0, 0, 0.95);
     z-index: 1;
   }
-  
+
   .dropdown-content a {
     color: #e5e5e5;
     padding: 12px 16px;
@@ -302,6 +306,7 @@ header {
     text-decoration: none;
     display: block;
   }
+
   .dropdown:hover .dropdown-content {
     display: block;
   }
@@ -323,7 +328,7 @@ header {
   }
 }
 
-/*****LOADER******/
+/* ---------------------------------------- loader animation */
 @keyframes rotate_loader1 {
   from {
     transform: rotate(0deg);
@@ -345,35 +350,30 @@ header {
     transform: rotate(0deg);
     display: none;
     opacity: 0;
-    }
   }
-
+}
 
 @keyframes loading-out {
   0% {
-    opacity:1;
-  }
-
-  20% {
-    opacity:1;
+    opacity: 1;
   }
 
   40% {
-    opacity:1;
+    opacity: 1;
   }
 
   70% {
-    opacity:0.9;
+    opacity: 0.9;
   }
 
   80% {
-    opacity:0.7;
+    opacity: 0.7;
   }
 
   100% {
     z-index: -1;
-    display:none;
-    opacity:0;
+    display: none;
+    opacity: 0;
   }
 }
 
@@ -392,7 +392,6 @@ header {
     opacity: 1;
     transform: scale(1);
   }
-
 
   100% {
     display: none;

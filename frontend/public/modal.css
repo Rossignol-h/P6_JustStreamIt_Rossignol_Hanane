@@ -30,7 +30,7 @@
     box-shadow: rgb(0 0 0 / 75%) 0px 3px 10px;
     border-radius: 10px;
     background: linear-gradient(to left, #860707 50%, transparent 100%);
-    background-image: url("images/modal_bg.jpg");
+    background-image: url("images/images/modal_bg.jpg");
     background-size: cover;
     background-position: 100% 60%;
 }
@@ -206,7 +206,7 @@
     }
 }
 
-/*---------------------------------------------Animations*/
+/*--------------------------------------------- Animations */
 @keyframes fadeIn {
     30% {
         opacity: 0;

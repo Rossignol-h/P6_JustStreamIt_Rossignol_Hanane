@@ -59,7 +59,7 @@ function displayMovie(Element, data) {
   } 
 }
 
-//------------------------------------------------------------------------ get the 7 best Movies 
+//--------------------------------------------------------------------- get the 7 best movies of all
 let genre1 = "%20"
 const container1 = document.querySelector("#carousel__ol-1")
 container1.setAttribute("data-set", genre1)
@@ -86,7 +86,7 @@ container3.setAttribute("data-set", genre3)
 fetchRequest(baseUrl, genre3).then((movies) => {
   manageLocalStorage(movies, genre3, container3)
 })
-//-------------------------------------------------------------------- get the 7 best Sport Movies 
+//-------------------------------------------------------------------- get the 7 best sport Movies 
 
 let genre4 = "Sport"
 const container4 = document.querySelector("#carousel__ol-4")
